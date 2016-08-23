@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pers.wzs.springmvc.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="pers.wzs.springmvc.pojo.SysUser">
+    <id column="sys_user_id" jdbcType="BIGINT" property="sysUserId" />
+    <result column="sys_user_login_name" jdbcType="VARCHAR" property="sysUserLoginName" />
+    <result column="sys_user_login_password" jdbcType="VARCHAR" property="sysUserLoginPassword" />
+    <result column="sys_user_status" jdbcType="VARCHAR" property="sysUserStatus" />
+    <result column="sys_user_is_delete" jdbcType="VARCHAR" property="sysUserIsDelete" />
+    <result column="sys_user_register_datetime" jdbcType="TIMESTAMP" property="sysUserRegisterDatetime" />
+    <result column="sys_user_register_source" jdbcType="VARCHAR" property="sysUserRegisterSource" />
+    <result column="sys_user_type" jdbcType="VARCHAR" property="sysUserType" />
+    <result column="sys_user_sex" jdbcType="VARCHAR" property="sysUserSex" />
+    <result column="sys_user_is_email_active" jdbcType="VARCHAR" property="sysUserIsEmailActive" />
+    <result column="sys_user_is_mobile_active" jdbcType="VARCHAR" property="sysUserIsMobileActive" />
+    <result column="sys_user_register_type" jdbcType="VARCHAR" property="sysUserRegisterType" />
+    <result column="sys_user_pay_passwrod" jdbcType="VARCHAR" property="sysUserPayPasswrod" />
+    <result column="sys_user_icon" jdbcType="VARCHAR" property="sysUserIcon" />
+    <result column="sys_user_real_name" jdbcType="VARCHAR" property="sysUserRealName" />
+    <result column="sys_user_email" jdbcType="VARCHAR" property="sysUserEmail" />
+    <result column="sys_user_mobile" jdbcType="VARCHAR" property="sysUserMobile" />
+    <result column="sys_user_weibo_id" jdbcType="VARCHAR" property="sysUserWeiboId" />
+    <result column="sys_user_qq_id" jdbcType="VARCHAR" property="sysUserQqId" />
+  </resultMap>
+</mapper>
