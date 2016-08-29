@@ -7,8 +7,12 @@ package pers.wzs.springmvctest;
  */
 public class NormalTest {
     public static void main(String[] args) {
-        Integer aa = new Integer("47");
-        Integer bb = new Integer("46");
-        System.out.println(aa.compareTo(bb)<0);
+        Integer aa = new Integer("1");
+        Integer bb = new Integer("1");
+        System.out.println(aa==1);
+
+
+        String aaa = "http://img4.jiecaojingxuan.com/2016/8/19/593e6a8d-dbc9-4f70-b444-63540c4cc015.png";
+        System.out.println(aaa.split("[?]")[0]);
     }
 }

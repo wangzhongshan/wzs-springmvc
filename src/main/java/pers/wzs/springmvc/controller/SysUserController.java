@@ -26,7 +26,7 @@ public class SysUserController {
 	@RequestMapping(value = "/showUserToJspById/{userId}",method = RequestMethod.GET)
 	public String showUser(Model model,@PathVariable("userId") Long userId){
 		LOG.info("进入展示用户控制器");
-		SysUser user = this.sysUserService.getById(userId);
+		SysUser user = sysUserService.selectByPK(userId);
 		model.addAttribute("user", user);
 		return "showUser";
 	}
@@ -34,7 +34,7 @@ public class SysUserController {
 	@RequestMapping(value = "/showUserToJSONById/{userId}",method = RequestMethod.GET)
 	@ResponseBody
 	public SysUser showUser(@PathVariable("userId") Long userId){
-		SysUser user = sysUserService.getById(userId);
+		SysUser user = sysUserService.selectByPK(userId);
 		return user;
 	}
 	
