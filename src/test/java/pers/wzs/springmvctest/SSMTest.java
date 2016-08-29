@@ -1,14 +1,11 @@
 package pers.wzs.springmvctest;
 
 import com.github.pagehelper.PageInfo;
-import org.jsoup.Jsoup;
-import org.jsoup.safety.Whitelist;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import pers.wzs.springmvc.mapper.RoleMapper;
 import pers.wzs.springmvc.pojo.Country;
 import pers.wzs.springmvc.pojo.Role;
 import pers.wzs.springmvc.pojo.SysUser;
