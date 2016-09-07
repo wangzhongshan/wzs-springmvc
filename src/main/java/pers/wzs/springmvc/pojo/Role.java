@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * role
  */
-public class Role extends BasePojo{
+public class Role extends BaseModel {
     @Id
     private Long id;
 

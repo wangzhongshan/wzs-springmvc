@@ -7,6 +7,6 @@ import java.io.Serializable;
  * @description 模型基类
  * @created 2016-08-12 13:54
  */
-public abstract class BasePojo implements Serializable{
+public abstract class BaseModel implements Serializable{
 
 }

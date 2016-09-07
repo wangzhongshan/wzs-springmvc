@@ -2,6 +2,7 @@ package pers.wzs.springmvc.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pers.wzs.springmvc.mapper.SysUserMapper;
 import pers.wzs.springmvc.pojo.SysUser;
@@ -14,11 +15,18 @@ import java.util.List;
 
 @Service
 public class SysUserServiceImpl extends BaseService<SysUser> implements SysUserService {
-	
 	@Override
 	public PageInfo<SysUser> getSysUsers(SysUser user,int pageNum,int pageSize) {
 		PageHelper.startPage(pageNum, pageSize, "sys_user_id desc");
 		List<SysUser> sysUsers = mapper.select(user);
 		return new PageInfo<>(sysUsers);
+	}
+
+	@Override
+	public boolean insertSysUsers(List<SysUser> users) throws Exception {
+		for (int i = 0; i < users.size(); i++) {
+			mapper.insertSelective(users.get(i));
+		}
+		return true;
 	}
 }

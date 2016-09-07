@@ -1,8 +1,5 @@
 package pers.wzs.springmvc.pojo;
 
-import tk.mybatis.mapper.annotation.NameStyle;
-import tk.mybatis.mapper.code.Style;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,7 +7,7 @@ import java.util.Date;
  * sys_user
  */
 @Table(name = "sys_user")
-public class SysUser extends BasePojo{
+public class SysUser extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sysUserId;
