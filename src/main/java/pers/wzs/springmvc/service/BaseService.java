@@ -25,6 +25,11 @@ public abstract class BaseService<T> implements IService<T>{
     }
 
     @Override
+    public List<T> selectByIds(String ids) {
+        return mapper.selectByIds(ids);
+    }
+
+    @Override
     public int insert(T entity) {
         return mapper.insertSelective(entity);
     }
@@ -32,6 +37,11 @@ public abstract class BaseService<T> implements IService<T>{
     @Override
     public int deleteByPK(Object key) {
         return mapper.deleteByPrimaryKey(key);
+    }
+
+    @Override
+    public int deleteByIds(String ids) {
+        return mapper.deleteByIds(ids);
     }
 
     @Override

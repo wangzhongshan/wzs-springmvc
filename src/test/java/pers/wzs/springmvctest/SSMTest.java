@@ -47,8 +47,10 @@ public class SSMTest {
 
 	@Test
 	public void test1() {
-		SysUser sysUser = sysUserService.selectByPK(1l);
-		System.out.println("--------------------------------" + sysUser.toString());
+		//SysUser sysUser = sysUserService.selectByPK(1l);
+		//System.out.println("--------------------------------" + sysUser.toString());
+		List<SysUser> users = sysUserService.selectByIds("2,3,4,5");
+		System.out.println(users.size());
 	}
 
 	@Test
@@ -111,17 +113,23 @@ public class SSMTest {
 		//SysUser country = user.selectByPrimaryKey(5l);
 		//System.out.println(country);
 
-		Role role = new Role();
-		role.setName("报表员5");
-		role.setStatus("0");
-		Role role2 = new Role();
-		role2.setName("报表员6");
-		role2.setStatus("0");
-		List<Role> roles = new ArrayList<>();
-		roles.add(role);
-		roles.add(role2);
-		int count=commonService.insert(roles);
-		System.out.println(count);
+		//Role role = new Role();
+		//role.setName("报表员5");
+		//role.setStatus("0");
+		//Role role2 = new Role();
+		//role2.setName("报表员6");
+		//role2.setStatus("0");
+		//List<Role> roles = new ArrayList<>();
+		//roles.add(role);
+		//roles.add(role2);
+		//int count=commonService.insert(roles);
+		//System.out.println(count);
+
+		//List<SysUser> users = commonService.selectByIds(SysUser.class, "2,3,4,5");
+		//System.out.println(users.size());
+
+		//int i = commonService.deleteByIds(Country.class, "6,7,8");
+		//System.out.println(i);
 
 		//SysUser sysUser = commonService.selectByPK(SysUser.class, 2l);
 		//System.out.println(sysUser);

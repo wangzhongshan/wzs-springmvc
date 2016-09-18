@@ -79,9 +79,9 @@
         <!--指定Maven用什么编码来呈现站点的HTML文件-->
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!--通用mapper版本-->
-        <common-mapper.version>3.3.8</common-mapper.version>
+        <common-mapper.version>3.3.9</common-mapper.version>
         <pagehelper.version>4.1.6</pagehelper.version>
-        <!--html解析器-->
+        <!--html解析器 Jsoup-->
         <jsoup.version>1.9.2</jsoup.version>
 
     </properties>

@@ -73,6 +73,11 @@ public class CommonServiceImpl implements CommonService{
     }
 
     @Override
+    public <T> List<T> selectByIds(Class<T> entityClass, String ids) {
+        return getMapper(entityClass).selectByIds(ids);
+    }
+
+    @Override
     public <T> int insert(T entity) {
         return ((WzsBaseMapper<T>) getMapper(entity.getClass())).insertSelective(entity);
     }
@@ -89,6 +94,11 @@ public class CommonServiceImpl implements CommonService{
     @Override
     public <T> int deleteByPK(Class<T> entityClass, Object key) {
         return getMapper(entityClass).deleteByPrimaryKey(key);
+    }
+
+    @Override
+    public <T> int deleteByIds(Class<T> entityClass, String ids) {
+        return getMapper(entityClass).deleteByIds(ids);
     }
 
     @Override

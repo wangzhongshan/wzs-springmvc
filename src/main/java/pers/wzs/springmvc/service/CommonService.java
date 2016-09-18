@@ -20,11 +20,29 @@ public interface CommonService {
 
     <T> T selectByPK(Class<T> entityClass, Object key);
 
+    /**
+     *
+     * @param entityClass
+     * @param ids eg: 2,3,4,5
+     * @param <T>
+     * @return
+     */
+    <T> List<T> selectByIds(Class<T> entityClass, String ids);
+
     <T> int insert(T entity);
 
     <T> int insert(List<T> entitys);
 
     <T> int deleteByPK(Class<T> entityClass, Object key);
+
+    /**
+     *
+     * @param entityClass
+     * @param ids eg: 2,3,4,5
+     * @param <T>
+     * @return
+     */
+    <T> int deleteByIds(Class<T> entityClass, String ids);
 
     <T> int update(T entity);
 
