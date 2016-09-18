@@ -21,5 +21,5 @@ http://www.springframework.org/schema/context/spring-context-3.2.xsd">
     <!-- 自动扫描(需要自动注入的类，对于那些类上有注解：@Repository、@Service、@Controller、@Component都进行注入) -->
     <!--因为 Spring MVC 是 Spring 的子容器，所以我们在 Spring MVC 的配置中再指定扫描 Controller 的注解，这里是父容器的配置地方-->
     <context:component-scan base-package="pers.wzs.springmvc"/>
-    <bean id="springContextUtil" class="pers.wzs.springmvc.service.SpringContextUtil" />
+    <bean id="springContextUtil" class="pers.wzs.springmvc.utils.SpringContextUtil" />
 </beans>

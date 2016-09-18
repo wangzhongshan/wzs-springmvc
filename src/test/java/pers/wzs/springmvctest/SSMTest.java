@@ -1,12 +1,15 @@
 package pers.wzs.springmvctest;
 
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang3.RandomUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import pers.wzs.springmvc.mapper.CountryMapper;
+import pers.wzs.springmvc.mapper.WzsBaseMapper;
 import pers.wzs.springmvc.pojo.Country;
 import pers.wzs.springmvc.pojo.Role;
 import pers.wzs.springmvc.pojo.SysUser;
@@ -33,13 +36,13 @@ public class SSMTest {
 	@Autowired
 	private Mapper<Role> roleMapper1;
 	@Autowired
-	private Mapper<Country> countryMapper;
+	private WzsBaseMapper<Country> countryMapper;
 	@Autowired
 	private CommonService commonService;
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	@Autowired
-	private List<Mapper> mappers;
+	private List<WzsBaseMapper> mappers;
 
 
 	@Test
@@ -95,8 +98,11 @@ public class SSMTest {
 		//SysUser user = mapper.selectByPrimaryKey(1l);
 		//Role role = roleMapper1.selectByPrimaryKey(1l);
 		//Role role1 = roleMapper.selectByPrimaryKey(1l);
-		Country country = countryMapper.selectByPrimaryKey(1);
-		System.out.println(country);
+		//Country country = countryMapper.selectByPrimaryKey(5);
+		//System.out.println(country);
+		for (int i = 0; i < mappers.size(); i++) {
+			System.out.println(mappers.get(i));
+		}
 	}
 
 	@Test
@@ -105,10 +111,17 @@ public class SSMTest {
 		//SysUser country = user.selectByPrimaryKey(5l);
 		//System.out.println(country);
 
-		//Role role = new Role();
-		//role.setName("报表员3");
-		//int count=commonService.insert(role);
-		//System.out.println(count);
+		Role role = new Role();
+		role.setName("报表员5");
+		role.setStatus("0");
+		Role role2 = new Role();
+		role2.setName("报表员6");
+		role2.setStatus("0");
+		List<Role> roles = new ArrayList<>();
+		roles.add(role);
+		roles.add(role2);
+		int count=commonService.insert(roles);
+		System.out.println(count);
 
 		//SysUser sysUser = commonService.selectByPK(SysUser.class, 2l);
 		//System.out.println(sysUser);
@@ -128,9 +141,9 @@ public class SSMTest {
 		//sysUser.setSysUserLoginPassword("r4r4");
 		//commonService.update(sysUser);
 
-		SysUser sysUser = new SysUser();
-		sysUser.setSysUserLoginPassword("r3r3");
-		List<SysUser> select = commonService.select(sysUser);
-		System.out.println(select.size());
+		//SysUser sysUser = new SysUser();
+		//sysUser.setSysUserLoginPassword("r3r3");
+		//List<SysUser> select = commonService.select(sysUser);
+		//System.out.println(select.size());
 	}
 }

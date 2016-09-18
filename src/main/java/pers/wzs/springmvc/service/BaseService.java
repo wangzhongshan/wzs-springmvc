@@ -1,7 +1,7 @@
 package pers.wzs.springmvc.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import pers.wzs.springmvc.service.IService;
+import pers.wzs.springmvc.mapper.WzsBaseMapper;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  */
 public abstract class BaseService<T> implements IService<T>{
     @Autowired
-    protected Mapper<T> mapper;
+    protected WzsBaseMapper<T> mapper;
 
     public Mapper<T> getMapper() {
         return mapper;

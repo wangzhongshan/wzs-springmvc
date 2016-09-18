@@ -1,8 +1,7 @@
 package pers.wzs.springmvc.service;
 
 import pers.wzs.springmvc.Constants.MapperFindMethod;
-import pers.wzs.springmvc.pojo.BaseModel;
-import tk.mybatis.mapper.common.Mapper;
+import pers.wzs.springmvc.mapper.WzsBaseMapper;
 
 import java.util.List;
 
@@ -13,15 +12,17 @@ import java.util.List;
  */
 public interface CommonService {
 
-    <T extends Mapper> T getMapperByMapperClass(Class<T> mapperClass);
+    <T extends WzsBaseMapper> T getMapperByMapperClass(Class<T> mapperClass);
 
-    <T> Mapper<T> getMapper(Class<T> entityClass);
+    <T> WzsBaseMapper<T> getMapper(Class<T> entityClass);
 
-    <T> Mapper<T> getMapper(Class<T> entityClass, MapperFindMethod method);
+    <T> WzsBaseMapper<T> getMapper(Class<T> entityClass, MapperFindMethod method);
 
     <T> T selectByPK(Class<T> entityClass, Object key);
 
     <T> int insert(T entity);
+
+    <T> int insert(List<T> entitys);
 
     <T> int deleteByPK(Class<T> entityClass, Object key);
 

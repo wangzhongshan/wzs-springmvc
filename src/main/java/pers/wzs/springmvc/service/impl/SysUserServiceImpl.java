@@ -2,15 +2,11 @@ package pers.wzs.springmvc.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pers.wzs.springmvc.mapper.SysUserMapper;
 import pers.wzs.springmvc.pojo.SysUser;
 import pers.wzs.springmvc.service.BaseService;
 import pers.wzs.springmvc.service.SysUserService;
-import tk.mybatis.mapper.common.Mapper;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
@@ -23,10 +19,7 @@ public class SysUserServiceImpl extends BaseService<SysUser> implements SysUserS
 	}
 
 	@Override
-	public boolean insertSysUsers(List<SysUser> users) throws Exception {
-		for (int i = 0; i < users.size(); i++) {
-			mapper.insertSelective(users.get(i));
-		}
-		return true;
+	public int insertSysUsers(List<SysUser> users) throws Exception {
+		return mapper.insertList(users);
 	}
 }

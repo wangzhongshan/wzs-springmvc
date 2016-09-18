@@ -125,4 +125,29 @@ public class HtmlParserTest {
 
         return result;
     }
+
+    @Test
+    public void testTrim() throws Exception {
+        String context = "<p>\n" +
+                "        我一直在幻想的一个场景就是，我跟一个富二代好上了，他妈来找我，把一张支票扔在我面前。\n" +
+                "</p>\n" +
+                "<p>\n" +
+                "        “给你五百万，离开&gt;&gt;&gt;&gt;我儿子！”\n" +
+                "</p>\n" +
+                "<p>\n" +
+                "        “好的阿姨！！！”\n" +
+                "</p>\n";
+
+        System.out.println("原始:############"+context);
+
+        Document doc = Jsoup.parse(context);
+        String text = doc.text();
+        System.out.println("#############"+text+"############");
+
+        context=Jsoup.clean(context.replaceAll("<div>","<div>%newline%").replaceAll("<p>", "<p>%newline%").replaceAll("<br/>","<br/>%newline%"), Whitelist.none());
+        context=context.replaceAll("%newline%","\n");
+        System.out.println("过滤后:############"+context+"########");
+        context = context.trim();
+        System.out.println("trim后:############"+context+"########");
+    }
 }
